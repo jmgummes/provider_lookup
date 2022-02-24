@@ -1,0 +1,65 @@
+<div data-controller="providers">
+  <h1>Providers</h1>
+
+  <%= form_with(url: find_providers_url, local: false, method: :put, data: { "providers-target" => "searchForm" }) do |f| %>
+    <%= label_tag(nil, "NPI:") %>
+    <%= text_field_tag "npi", nil, maxLength: 10, size: 10, data: { "providers-target" => "searchField" } %>
+    <%= submit_tag "Find Provider" %>
+  <% end %>
+
+  <ul id="providers-tabs" class="nav nav-tabs">
+    <li class="nav-item">
+      <a data-providers-target="physiciansTab" class="nav-link active" href="javascript:void(0)">Physicians</a>
+    </li>
+    <li class="nav-item">
+      <a data-providers-target="clinicsTab" class="nav-link" href="javascript:void(0)">Clinics</a>
+    </li>
+  </ul>
+  
+  <span id="providers-data">
+    <div data-providers-target="physiciansDiv" class="providers-table"> 
+      <table data-providers-target="physiciansTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>NPI</th>
+            <th>Name</th>
+            <th>Credential</th>
+            <th>Location Address</th>
+            <th>Location City</th>
+            <th>Location State</th>
+            <th>Location Zip Code</th>
+            <th>Location Country</th>
+            <th>Primary Taxonomy Code</th>
+            <th>Primary Taxonomy Description</th>
+            <th>Primary Taxonomy State</th>
+            <th>Primary Taxonomy License</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  
+    <div data-providers-target="clinicsDiv" class="providers-table" style="display:none">
+      <table data-providers-target="clinicsTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>NPI</th>
+            <th>Name</th>
+            <th>Authorized Official Name</th>
+            <th>Authorized Official Title</th>
+            <th>Location Address</th>
+            <th>Location City</th>
+            <th>Location State</th>
+            <th>Location Zip Code</th>
+            <th>Location Country</th>
+            <th>Primary Taxonomy Code</th>
+            <th>Primary Taxonomy Description</th>
+            <th>Primary Taxonomy State</th>
+            <th>Primary Taxonomy License</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
