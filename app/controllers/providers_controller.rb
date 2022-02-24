@@ -17,7 +17,8 @@ class ProvidersController < ApplicationController
       [
         p.number, "#{p.last_name}, #{p.first_name}", p.credential, "#{p.location_address_1}\n#{p.location_address_2}",
         p.location_address_city, p.location_address_state, p.location_address_postal_code, p.location_address_country_code,
-        p.primary_taxonomy&.code, p.primary_taxonomy&.description, p.primary_taxonomy_edge&.state, p.primary_taxonomy_edge&.license
+        p.location_address_telephone_number, p.primary_taxonomy&.code, p.primary_taxonomy&.description, p.primary_taxonomy_edge&.state, 
+        p.primary_taxonomy_edge&.license
       ]
     end
   end
@@ -28,7 +29,8 @@ class ProvidersController < ApplicationController
         c.number, c.name, "#{c.authorized_official_last_name}, #{c.authorized_official_first_name}",
         c.authorized_official_title_or_position, "#{c.location_address_1}\n#{c.location_address_2}",
         c.location_address_city, c.location_address_state, c.location_address_postal_code, c.location_address_country_code,
-        c.primary_taxonomy&.code, c.primary_taxonomy&.description, c.primary_taxonomy_edge&.state, c.primary_taxonomy_edge&.license
+        c.location_address_telephone_number, c.primary_taxonomy&.code, c.primary_taxonomy&.description, 
+        c.primary_taxonomy_edge&.state, c.primary_taxonomy_edge&.license
       ]
     end
   end
