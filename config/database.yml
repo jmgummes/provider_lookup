@@ -17,3 +17,7 @@ test:
   <<: *default
   database: provider_lookup_test
 
+production:
+  <<: *default
+  database: provider_lookup_production
+  password: <%= credentials.fetch('production_database_password') %>
