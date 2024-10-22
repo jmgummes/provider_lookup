@@ -20,4 +20,4 @@ test:
 production:
   <<: *default
   database: provider_lookup_production
-  password: <%= credentials.fetch('production_database_password') %>
+  password: <%= Rails.application.credentials.production_database_password %>
