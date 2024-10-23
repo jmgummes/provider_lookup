@@ -1,0 +1,16 @@
+@import "bootstrap";
+@import "dataTables.bootstrap5.css";
+
+body {
+  margin: 10px;
+}
+
+#providers-tabs {
+  position: relative;
+  top: 10px;
+}
+
+#providers-data {
+  position: relative;
+  top: 15px;
+}
