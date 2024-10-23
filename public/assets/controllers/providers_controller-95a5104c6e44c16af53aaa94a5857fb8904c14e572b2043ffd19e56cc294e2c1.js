@@ -85,4 +85,4 @@ export default class extends Controller {
     $("div.providers-table").hide();
     $(div).show();
   }
-}
+};
