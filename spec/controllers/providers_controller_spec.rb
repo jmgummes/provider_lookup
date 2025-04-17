@@ -29,7 +29,7 @@ RSpec.describe ProvidersController, type: :controller do
     end
 
     describe "#find" do
-      describe "params[:npi] is missing" do
+      context "params[:npi] is missing" do
         before { put :find }
         
         it "should respond with 'bad request'" do
@@ -37,7 +37,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
 
-      describe "#params[:npi] is 9 digits" do
+      context "#params[:npi] is 9 digits" do
         before {  put :find, params: { npi: "123456789" } }
       
         it "should respond with 'bad request'" do
@@ -45,7 +45,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
   
-      describe "#params[:npi] starts with 0" do
+      context "#params[:npi] starts with 0" do
         before { put :find, params: { npi: "0123456789" } }
       
         it "should respond with 'bad request'" do          
@@ -53,7 +53,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
 
-      describe "#params[:npi] contains a non-digit" do
+      context "#params[:npi] contains a non-digit" do
         before { put :find, params: { npi: "123456789X" } }
       
         it "should respond with 'bad request'" do
@@ -61,7 +61,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
    
-      describe "#params[:npi] points to physician_2" do
+      context "#params[:npi] points to physician_2" do
         before { put :find, params: { npi: physician_2.number } }
       
         it "should change the order fields on physicians such that physician_1.order > physician_2.order" do
@@ -77,7 +77,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
       
-      describe "#params[:npi] points to clinic_2" do
+      context "#params[:npi] points to clinic_2" do
         before { put :find, params: { npi: clinic_2.number } }
       
         it "should change the order fields on clinics such that clinic_1.order > clinic_2.order" do
@@ -107,7 +107,7 @@ RSpec.describe ProvidersController, type: :controller do
     end
     
     describe "#physicians" do
-      describe "params[:draw] is 1, params[:start] is 0 and params[:length] is 1" do
+      context "params[:draw] is 1, params[:start] is 0 and params[:length] is 1" do
         before { get :physicians, params: {draw: 1, start: 0, length: 1} }
       
         it "should respond with 'ok'" do
@@ -136,7 +136,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
       
-      describe "params[:draw] is 1, params[:start] is 0 and params[:length] is 2" do
+      context "params[:draw] is 1, params[:start] is 0 and params[:length] is 2" do
         before { get :physicians, params: {draw: 1, start: 0, length: 2} }
       
         it "should respond with 'ok'" do
@@ -165,7 +165,7 @@ RSpec.describe ProvidersController, type: :controller do
         end
       end
       
-      describe "params[:draw] is 1, params[:start] is 1 and params[:length] is 2" do
+      context "params[:draw] is 1, params[:start] is 1 and params[:length] is 2" do
         before { get :physicians, params: {draw: 1, start: 1, length: 2} }
       
         it "should respond with 'ok'" do
@@ -196,7 +196,7 @@ RSpec.describe ProvidersController, type: :controller do
     end
     
     describe "#clinics" do
-      describe "params[:draw] is 1, params[:start] is 0 and params[:length] is 1" do
+      context "params[:draw] is 1, params[:start] is 0 and params[:length] is 1" do
         before { get :clinics, params: {draw: 1, start: 0, length: 1} }
       
         it "should respond with 'ok'" do
