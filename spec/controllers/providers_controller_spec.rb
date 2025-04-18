@@ -184,8 +184,8 @@ RSpec.describe ProvidersController, type: :controller do
         last_name: "ALBRIGHT",
         middle_name: "TEST_MIDDLE_NAME",
         credential: "PTA",
-        sole_propieter: "NO",
-        gender: "F",
+        sole_proprietor: "NO",
+        sex: "F",
         status: "A",
         location_address_country_code: "US",
         location_address_type: "DOM",
@@ -222,7 +222,7 @@ RSpec.describe ProvidersController, type: :controller do
       expect(Clinic.where(:order => min_order).count).to eq(1)
 
       expect(clinic).to have_attributes(
-        name: "ADAMS PHYSICAL REHAB & SPINE CENTER, LLC",
+        organization_name: "ADAMS PHYSICAL REHAB & SPINE CENTER, LLC",
         organizational_subpart: "NO",
         status: "A",
         authorized_official_first_name: "STEVE",
