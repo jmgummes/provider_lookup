@@ -43,7 +43,7 @@ class Physician < ApplicationRecord
   def self.basic_attributes(data)
     fields = [
       :name_prefix, :first_name, :last_name, :middle_name, :credential,
-      :sole_proprieter, :sex, :status
+      :sole_proprietor, :sex, :status
     ]
     
     Hash[
