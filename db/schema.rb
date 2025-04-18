@@ -11,14 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
-  create_table "clinic_taxonomies", charset: "utf8", force: :cascade do |t|
+  create_table "clinic_taxonomies", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "code", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "clinic_taxonomy_edges", charset: "utf8", force: :cascade do |t|
+  create_table "clinic_taxonomy_edges", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.integer "clinic_id", null: false
     t.integer "clinic_taxonomy_id", null: false
     t.boolean "primary"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
     t.index ["clinic_id", "clinic_taxonomy_id", "state", "license"], name: "clinic_tax_edges_ids_index", unique: true
   end
 
-  create_table "clinics", charset: "utf8", force: :cascade do |t|
+  create_table "clinics", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.integer "order", null: false
     t.integer "number", null: false
     t.string "name"
@@ -64,14 +64,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
     t.index ["order"], name: "index_clinics_on_order", unique: true
   end
 
-  create_table "physician_taxonomies", charset: "utf8", force: :cascade do |t|
+  create_table "physician_taxonomies", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "code", null: false
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "physician_taxonomy_edges", charset: "utf8", force: :cascade do |t|
+  create_table "physician_taxonomy_edges", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.integer "physician_id", null: false
     t.integer "physician_taxonomy_id", null: false
     t.boolean "primary"
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
     t.index ["physician_id", "physician_taxonomy_id", "state", "license"], name: "phys_tax_edges_ids_index", unique: true
   end
 
-  create_table "physicians", charset: "utf8", force: :cascade do |t|
+  create_table "physicians", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.integer "order", null: false
     t.integer "number", null: false
     t.string "name_prefix"

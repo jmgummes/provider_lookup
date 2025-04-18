@@ -90,7 +90,7 @@ class ProvidersController < ApplicationController
   
   def find_provider_externally
     response, success, parsed_response = NPIRegistryAPIDriver.instance.get_provider(params[:npi])
-    
+
     unless response.is_a?(Net::HTTPSuccess)
       render_error(500, "NPI lookup failed with unexpected response code of #{response.code}. Response body: #{response.body}")
       return
