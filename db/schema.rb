@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
   create_table "clinics", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.integer "order", null: false
     t.integer "number", null: false
-    t.string "name"
+    t.string "organization_name"
     t.string "organizational_subpart"
     t.string "status"
     t.string "authorized_official_first_name"
@@ -90,8 +90,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
     t.string "last_name"
     t.string "middle_name"
     t.string "credential"
-    t.string "sole_propieter"
-    t.string "gender"
+    t.string "sole_proprieter"
+    t.string "sex"
     t.string "status"
     t.string "location_address_country_code"
     t.string "location_address_type"

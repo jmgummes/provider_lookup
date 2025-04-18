@@ -42,7 +42,7 @@ class Clinic < ApplicationRecord
 
   def self.basic_attributes(data)
     fields = [
-      :name, :organizational_subpart, :status, :authorized_official_first_name,
+      :organization_name, :organizational_subpart, :status, :authorized_official_first_name,
       :authorized_official_last_name, :authorized_official_telephone_number,
       :authorized_official_title_or_position, :authorized_official_name_prefix    
     ]

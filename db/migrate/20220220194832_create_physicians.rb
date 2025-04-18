@@ -8,8 +8,8 @@ class CreatePhysicians < ActiveRecord::Migration[7.0]
       t.string :last_name, null: true
       t.string :middle_name, null: true
       t.string :credential, null: true
-      t.string :sole_propieter, null: true
-      t.string :gender, null: true
+      t.string :sole_proprieter, null: true
+      t.string :sex, null: true
       t.string :status, null: true
       t.string :location_address_country_code, null: true
       t.string :location_address_type, null: true

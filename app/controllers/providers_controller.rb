@@ -26,7 +26,7 @@ class ProvidersController < ApplicationController
   def clinics
     providers(Clinic, :clinic_taxonomy_edges, :clinic_taxonomy) do |c| 
       [
-        c.number, c.name, "#{c.authorized_official_last_name}, #{c.authorized_official_first_name}",
+        c.number, c.organization_name, "#{c.authorized_official_last_name}, #{c.authorized_official_first_name}",
         c.authorized_official_title_or_position, "#{c.location_address_1}\n#{c.location_address_2}",
         c.location_address_city, c.location_address_state, c.location_address_postal_code, c.location_address_country_code,
         c.location_address_telephone_number, c.primary_taxonomy&.code, c.primary_taxonomy&.description, 

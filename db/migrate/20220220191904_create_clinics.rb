@@ -3,7 +3,7 @@ class CreateClinics < ActiveRecord::Migration[7.0]
     create_table :clinics do |t|
       t.integer :order, null: false
       t.integer :number, null: false
-      t.string :name, null: true
+      t.string :organization_name, null: true
       t.string :organizational_subpart, null: true
       t.string :status, null: true
       t.string :authorized_official_first_name, null: true
