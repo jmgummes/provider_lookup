@@ -90,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_194832) do
     t.string "last_name"
     t.string "middle_name"
     t.string "credential"
-    t.string "sole_proprieter"
+    t.string "sole_proprietor"
     t.string "sex"
     t.string "status"
     t.string "location_address_country_code"

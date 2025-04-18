@@ -176,7 +176,7 @@ RSpec.describe ProvidersController, type: :controller do
 
       min_order = Physician.minimum(:order)
       expect(physician.order).to eq(min_order)
-      expect(Physician.where(:order => min_order).count).to eq(1)
+      expect(Physician.where(order: min_order).count).to eq(1)
 
       expect(physician).to have_attributes(
         name_prefix: "TEST_NAME_PREFIX",
